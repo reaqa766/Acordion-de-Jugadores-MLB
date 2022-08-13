@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [datosP, setDatosP] = useState([]);
+  // const url =
+  //   "https://statsapi.mlb.com/api/v1/people?personIds=650402&season=2018&&gamePk=529410&hydrate=stats(type=gameLog)";
   const url =
     "https://statsapi.mlb.com/api/v1/sports/1/players?season=2022&gameType=R";
 
@@ -28,15 +30,14 @@ function App() {
     <>
       <h2>jugadores</h2>
       {datosP.map((datoPlayer, index) => {
-        // console.log("Index", index);
-        // console.log("datosP", datosP[index]);
-        // console.log("index", index);
-        // if (index) {
         return (
-          <div key={datosP[index]}>
-            <h3>{datosP[index].fullName}</h3>
-            <h3>{datosP[index].birthCity}</h3>
-            <h3>{datosP[index].id}</h3>
+          <div key={datosP[index]} className="container">
+            <div className="question">
+              <h2>{datosP[index].fullName}</h2>
+              {/* <h3>{index}</h3> */}
+              <h3>{datosP[index].birthCity}</h3>
+              <h3>{datosP[index].id}</h3>
+            </div>
           </div>
         );
         // }
