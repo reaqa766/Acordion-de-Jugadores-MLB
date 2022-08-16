@@ -18,18 +18,11 @@ function App() {
     const datosPlayers = await response.json();
     const players = Object.values(datosPlayers);
     // console.log(datosPlayers.people[0].stats[0].splits[101].stat.avg);
+
     const jugadoresFiltrados = datosPlayers.people.filter(
       (jugador) => jugador.birthCountry === "Venezuela"
     );
     setDatosP(jugadoresFiltrados);
-    // const jugadorID = [];
-    // const JugadoresId = jugadoresFiltrados.forEach((ids) => {
-    //   jugadorID.push([ids.id]);
-    // });
-    // setDatosP(jugadorID);
-    // console.log(jugadorID);
-    // console.log("jugadorID", jugadorID[0]);
-    console.log(jugadoresFiltrados);
   };
 
   useEffect(() => {
